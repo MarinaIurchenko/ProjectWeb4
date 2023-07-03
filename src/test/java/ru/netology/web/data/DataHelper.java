@@ -22,9 +22,6 @@ public class DataHelper {
     public static int generateValidAmount(int balance){
         return new Random().nextInt(balance) + 1;
     }
-    public static int generateInvalidAmount(int balance){
-        return Math.abs(balance) + new Random().nextInt(10000);
-    }
 
     @Value
     public static class VerificationCode{
