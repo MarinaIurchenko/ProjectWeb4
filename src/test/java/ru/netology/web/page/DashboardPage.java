@@ -23,10 +23,7 @@ public class DashboardPage {
         var text = cards.findBy(Condition.text(cardInfo.getCardNumber().substring(15))).getText();
         return extractBalance(text);
     }
-    public int getCardBalance(int index){
-        var text = cards.get(index).getText();
-        return extractBalance(text);
-    }
+
     public TransferPage selectCardToTransfer(DataHelper.CardInfo cardInfo){
         cards.findBy(attribute("data-test-id", cardInfo.getTestId())).$("button").click();
         return new TransferPage();
